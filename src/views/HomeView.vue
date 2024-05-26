@@ -2713,16 +2713,57 @@ const toggleActive = (id, name) => {
 }
 </script>
 <template>
-  <div>
-    <h1>Recipe Management</h1>
-    <!-- <IngredientCard :items="pastryItems" @toggle-active="toggleActive" /> -->
-    <IngredientCard
-      v-for="(value, key) in allItems"
-      :key="key"
-      :items="value"
-      :name="key"
-      @toggle-active="toggleActive"
-      style="margin-bottom: 40px"
-    />
+  <div class="main-body">
+    <div class="sidebar-scrollbar">
+      <h1>Recipe Management</h1>
+      <!-- <IngredientCard :items="pastryItems" @toggle-active="toggleActive" /> -->
+      <IngredientCard
+        v-for="(value, key) in allItems"
+        :key="key"
+        :items="value"
+        :name="key"
+        @toggle-active="toggleActive"
+        style="margin-bottom: 40px"
+      />
+      <button class="suggest-ingredient">Suggest Ingredient</button>
+    </div>
+    <div>Something</div>
   </div>
 </template>
+
+<style scoped>
+.main-body {
+  height: 100vh;
+  margin: 20px 20px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 3fr;
+}
+.suggest-ingredient {
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 10px 40px;
+}
+.sidebar-scrollbar {
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style>
