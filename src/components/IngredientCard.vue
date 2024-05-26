@@ -9,12 +9,7 @@ const chosenProductsCount = computed(() => props.items.filter((item) => item.act
   <div class="card-container">
     <div class="header-container">
       <div style="width: 30%">
-        <img
-          height="100px"
-          width="100px"
-          src="../assets/images/pastry-essentials.png"
-          alt="pantry_es"
-        />
+        <img height="80%" width="80%" :src="`/img/food_categories/${props.name}.png`" :alt="name" />
       </div>
       <div style="width: 65%">
         <h3 class="header-design">
@@ -74,12 +69,14 @@ const chosenProductsCount = computed(() => props.items.filter((item) => item.act
   border-radius: 10px;
   padding: 15px;
   max-width: 400px;
+  /* margin-left: 20px; */
+  background: #ffffff;
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .header-design {
-  font: 1.2em sans-serif;
+  font: 1.2rem sans-serif;
   margin-bottom: 30px;
 }
 .header-container {

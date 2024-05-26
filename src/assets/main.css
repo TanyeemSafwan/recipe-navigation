@@ -1,1 +1,6 @@
 @import './base.css';
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+}

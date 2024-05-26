@@ -2715,17 +2715,17 @@ const toggleActive = (id, name) => {
 <template>
   <div class="main-body">
     <div class="sidebar-scrollbar">
-      <h1>Recipe Management</h1>
-      <!-- <IngredientCard :items="pastryItems" @toggle-active="toggleActive" /> -->
-      <IngredientCard
-        v-for="(value, key) in allItems"
-        :key="key"
-        :items="value"
-        :name="key"
-        @toggle-active="toggleActive"
-        style="margin-bottom: 40px"
-      />
-      <button class="suggest-ingredient">Suggest Ingredient</button>
+      <div v-for="(value, key) in allItems" :key="key" class="d-flex-center">
+        <IngredientCard
+          :items="value"
+          :name="key"
+          @toggle-active="toggleActive"
+          style="margin-bottom: 40px; margin-top: 30px"
+        />
+      </div>
+      <div style="margin-bottom: 20px" class="d-flex-center">
+        <button class="suggest-ingredient">Suggest Ingredient</button>
+      </div>
     </div>
     <div>Something</div>
   </div>
@@ -2734,9 +2734,9 @@ const toggleActive = (id, name) => {
 <style scoped>
 .main-body {
   height: 100vh;
-  margin: 20px 20px;
   display: grid;
   width: 100%;
+  background: url('../assets/images/food-background.jpg');
   grid-template-columns: 1fr 3fr;
 }
 .suggest-ingredient {
